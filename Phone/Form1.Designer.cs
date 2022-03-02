@@ -60,7 +60,7 @@ namespace Phone
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Таблица";
+            this.button1.Text = "Список";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -90,6 +90,8 @@ namespace Phone
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 20);
             this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "                  Имя";
+            this.textBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseDoubleClick);
             // 
             // textBox2
             // 
@@ -97,6 +99,8 @@ namespace Phone
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(148, 20);
             this.textBox2.TabIndex = 5;
+            this.textBox2.Text = "             Фамилия";
+            this.textBox2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDoubleClick);
             // 
             // textBox3
             // 
@@ -104,6 +108,8 @@ namespace Phone
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(148, 20);
             this.textBox3.TabIndex = 6;
+            this.textBox3.Text = "          Номер телефона";
+            this.textBox3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox3_MouseDoubleClick);
             // 
             // timer1
             // 
@@ -137,6 +143,8 @@ namespace Phone
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(148, 20);
             this.textBox4.TabIndex = 9;
+            this.textBox4.Text = "Введите имя или фамилию";
+            this.textBox4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox4_MouseDoubleClick);
             // 
             // button4
             // 
@@ -153,7 +161,7 @@ namespace Phone
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrchid;
-            this.ClientSize = new System.Drawing.Size(461, 298);
+            this.ClientSize = new System.Drawing.Size(464, 303);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label2);
@@ -165,6 +173,8 @@ namespace Phone
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Телефонный справочник";
             this.Load += new System.EventHandler(this.Form1_Load);

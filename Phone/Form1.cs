@@ -46,7 +46,7 @@ namespace Phone
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
         }
-
+     
         private void timer1_Tick(object sender, EventArgs e)
         {
             int h = DateTime.Now.Hour;
@@ -81,7 +81,7 @@ namespace Phone
             }
             label2.Text = time;
            
-            string daymans = "";
+            string daymans = ""; //дата и месяц
             int d = DateTime.Now.Day;
             int ma= DateTime.Now.Month;
             int y = DateTime.Now.Year;
@@ -110,7 +110,7 @@ namespace Phone
             label1.Text = daymans;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)//Поисковик
         {
             bool found = false;
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -123,7 +123,7 @@ namespace Phone
                         if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox4.Text))
                         {
                             dataGridView1.Rows[i].Selected = true;
-                           // dataGridView1.FirstDisplayedScrollingRowIndex = i;
+                           dataGridView1.FirstDisplayedScrollingRowIndex = i;
                             found = true;
                             break;
                         }
@@ -139,6 +139,27 @@ namespace Phone
             {
                 MessageBox.Show("Не найдено", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            textBox1.Clear();
+            
+        }
+        private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox2.Clear();
+        }
+
+        private void textBox3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox3.Clear();
+        }
+
+        private void textBox4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox4.Clear();
         }
     }
 }
