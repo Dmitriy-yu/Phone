@@ -36,10 +36,12 @@ namespace Phone
         private void button3_Click(object sender, EventArgs e)
         {
             controller.Delete(int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Id"].Value.ToString()));
+            dataGridView1.DataSource = controller.UpgRade();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
             timer.Interval = 1000;
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
@@ -106,9 +108,45 @@ namespace Phone
             daymans += " г.";
 
             label1.Text = daymans;
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            bool found = false;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    if (dataGridView1.Rows[i].Cells[j].Value!=null)
+                    {
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox4.Text))
+                        {
+                            dataGridView1.Rows[i].Selected = true;
+                           // dataGridView1.FirstDisplayedScrollingRowIndex = i;
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (found)
+                {
+                    break;
 
+                }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Не найдено", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
+                     
+             
+
+
+
+
+
            
